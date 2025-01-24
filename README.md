@@ -1,3 +1,7 @@
+# Installation Reminder
+
+Remember to run `npm install` after cloning the project.
+
 # TemplateDrivenFormTemplate
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
