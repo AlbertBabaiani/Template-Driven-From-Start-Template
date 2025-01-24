@@ -1,0 +1,430 @@
+<div class="container">
+  <h1 class="text-center fw-bold my-5">We're Hiring - Angular Developer</h1>
+
+  <form>
+    <section ngModelGroup="personal_information">
+      <h2 class="mb-3">Personal Information</h2>
+      <div class="row mb-4 gy-4">
+        <div class="col-12 col-md-6">
+          <div>
+            <label for="first_name" class="form-label"
+              >First Name <span class="text-danger">*</span></label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="first_name"
+              placeholder="John"
+            />
+          </div>
+
+          <span class="text-danger d-block my-1">First name is required.</span>
+
+          <span class="text-danger d-block my-1"
+            >Enter at least 3 characters.</span
+          >
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div>
+            <label for="last_name" class="form-label"
+              >Last Name <span class="text-danger">*</span></label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="last_name"
+              placeholder="Doe"
+            />
+          </div>
+
+          <span class="text-danger d-block my-1">Last name is required.</span>
+
+          <span class="text-danger d-block my-1"
+            >Enter at least 3 characters.</span
+          >
+        </div>
+      </div>
+
+      <section>
+        <h3>Email Information</h3>
+        <div class="row mb-4 gy-4">
+          <div class="col-12 col-md-6">
+            <div>
+              <label for="email" class="form-label"
+                >Email <span class="text-danger">*</span></label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="JohnDoe@example.com"
+              />
+            </div>
+
+            <span class="text-danger d-block my-1">Email is required.</span>
+
+            <span class="text-danger d-block my-1"
+              >Enter a valid email address.</span
+            >
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div>
+              <label for="confirm_email" class="form-label"
+                >Repeat Email <span class="text-danger">*</span></label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="confirm_email"
+                placeholder="JohnDoe@example.com"
+              />
+
+              <span class="text-danger d-block my-1"
+                >Email confirmation is required.</span
+              >
+
+              <span class="text-danger d-block my-1"
+                >Enter a valid email address.</span
+              >
+              <span class="text-danger d-block my-1"
+                >Both email addresses must be identical.</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-4">
+        <h3>Contact Information</h3>
+
+        <div>
+          <label for="mobile_phone" class="form-label"
+            >Mobile Phone <span class="text-danger">*</span></label
+          >
+          <input
+            type="tel"
+            class="form-control"
+            id="mobile_phone"
+            name="mobile_phone"
+          />
+
+          <span class="text-danger d-block my-1"
+            >Phone number is required.</span
+          >
+          <span class="text-danger d-block my-1"
+            >Enter a valid phone number.</span
+          >
+        </div>
+      </section>
+
+      <section>
+        <h3>Gender <span class="text-danger">*</span></h3>
+
+        @for(gender_value of genders; track $index){
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="gender"
+            id="gender_{{ $index }}"
+          />
+          <label class="form-check-label" [for]="'gender_' + $index"
+            >{{ gender_value }}
+          </label>
+        </div>
+        }
+      </section>
+    </section>
+
+    <hr class="my-5" />
+
+    <section ngModelGroup="address">
+      <h2>Address</h2>
+      <div class="row gy-4">
+        <div class="col-12 col-md-6">
+          <div>
+            <label for="address" class="form-label"
+              >Address <span class="text-danger">*</span></label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="address"
+              placeholder="123 Main St"
+            />
+
+            <span class="text-danger d-block my-1">Address is required.</span>
+
+            <span class="text-danger d-block my-1"
+              >Enter at least 3 characters.</span
+            >
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div>
+            <label for="city" class="form-label"
+              >City <span class="text-danger">*</span></label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="city"
+              placeholder="City Name"
+            />
+
+            <span class="text-danger d-block my-1">City is required.</span>
+
+            <span class="text-danger d-block my-1"
+              >Enter at least 3 characters.</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="my-5" />
+
+    <section>
+      <h2 class="mb-3">Education</h2>
+
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="noEducation" />
+        <label class="form-check-label" for="noEducation"> No Education </label>
+      </div>
+
+      <div class="row gy-4">
+        <div class="col-12 col-md-6">
+          <div>
+            <label for="degree" class="form-label"
+              >Degree
+              <span class="text-danger">*</span>
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="degree"
+              placeholder="Bachelor of Science in Computer Science"
+            />
+
+            <span class="text-danger d-block my-1">Degree is required.</span>
+
+            <span class="text-danger d-block my-1"
+              >Enter at least 3 characters.</span
+            >
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div>
+            <label for="institution" class="form-label"
+              >Institution <span class="text-danger">*</span></label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="institution"
+              placeholder="University of Example"
+            />
+
+            <span class="text-danger d-block my-1"
+              >Institution is required.</span
+            >
+
+            <span class="text-danger d-block my-1"
+              >Enter at least 3 characters.</span
+            >
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div>
+            <label for="eduStartDate" class="form-label"
+              >Start Date <span class="text-danger">*</span></label
+            >
+            <input type="date" class="form-control" id="eduStartDate" />
+
+            <span class="text-danger d-block my-1"
+              >Start date is required.</span
+            >
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div>
+            <label for="eduEndDate" class="form-label"
+              >End Date <span class="text-danger">*</span></label
+            >
+            <input type="text" class="form-control" id="eduEndDate" />
+
+            <span class="text-danger d-block my-1">End date is required.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-check my-4">
+        <input class="form-check-input" type="checkbox" id="stillLearning" />
+        <label class="form-check-label" for="stillLearning">
+          Still Learning
+        </label>
+      </div>
+    </section>
+
+    <hr class="my-5" />
+
+    <section>
+      <h2 class="mb-3">Experience</h2>
+
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="unemployed" />
+        <label class="form-check-label" for="unemployed"> Unemployed </label>
+      </div>
+
+      <div class="row gy-4">
+        <div class="col-12 col-md-6">
+          <div>
+            <label for="jobTitle" class="form-label"
+              >Job Title
+              <span class="text-danger">*</span>
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="jobTitle"
+              placeholder="Software Engineer"
+            />
+
+            <span class="text-danger d-block my-1">Job title is required.</span>
+
+            <span class="text-danger d-block my-1"
+              >Enter at least 3 characters.</span
+            >
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div>
+            <label for="company" class="form-label"
+              >Company
+              <span class="text-danger">*</span>
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="company"
+              placeholder="Tech Solutions Inc."
+            />
+
+            <span class="text-danger d-block my-1"
+              >Company name is required.</span
+            >
+            <span class="text-danger d-block my-1"
+              >Enter at least 3 characters.</span
+            >
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div>
+            <label for="startDate" class="form-label"
+              >Start Date
+              <span class="text-danger">*</span>
+            </label>
+            <input type="date" class="form-control" id="startDate" />
+
+            <span class="text-danger d-block my-1"
+              >Start date is required.</span
+            >
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div>
+            <label for="endDate" class="form-label"
+              >End Date
+              <span class="text-danger">*</span>
+            </label>
+            <input type="text" class="form-control" id="endDate" />
+
+            <span class="text-danger d-block my-1">End date is required.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-check my-4">
+        <input class="form-check-input" type="checkbox" id="stillWorking" />
+        <label class="form-check-label" for="stillWorking">
+          Still Working
+        </label>
+      </div>
+    </section>
+
+    <hr class="my-5" />
+
+    <section>
+      <h2 class="mb-3">Profile Links</h2>
+      <div class="row gy-4">
+        <div class="col-12 col-md-6">
+          <div>
+            <label for="linkedin" class="form-label">LinkedIn</label>
+            <input
+              type="url"
+              class="form-control"
+              id="linkedin"
+              placeholder="https://linkedin.com/in/yourprofile"
+            />
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div>
+            <label for="facebook" class="form-label">Facebook</label>
+            <input
+              type="url"
+              class="form-control"
+              id="facebook"
+              placeholder="https://facebook.com/yourprofile"
+            />
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div>
+            <label for="webpage" class="form-label">Webpage</label>
+            <input
+              type="url"
+              class="form-control"
+              id="webpage"
+              placeholder="https://yourwebsite.com"
+            />
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div>
+            <label for="twitter" class="form-label">X (Twitter)</label>
+            <input
+              type="url"
+              class="form-control"
+              id="twitter"
+              placeholder="https://twitter.com/yourprofile"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="form-check mt-5 mb-4">
+      <input type="checkbox" class="form-check-input" id="agreeTerms" />
+      <label class="form-check-label" for="agreeTerms"
+        >I agree to the <a href="#">Terms and Conditions</a></label
+      >
+    </div>
+
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary w-100">Submit</button>
+    </div>
+  </form>
+</div>
